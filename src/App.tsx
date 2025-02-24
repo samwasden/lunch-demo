@@ -18,6 +18,8 @@ function App() {
   const beerHeightValue = useTransform(scrollYProgress, [0.8, 0.9], [0, 52]);
   const foamHeightValue = useTransform(scrollYProgress, [0.8, 0.9], [0, 10]);
 
+  const opacity2Value = useTransform(scrollYProgress, [0.8, 0.9], [0, 1]);
+
   return (
     <div
       className="h-[400dvh] w-full overflow-x-hidden bg-[#100F17] overscroll-non"
@@ -48,6 +50,9 @@ function App() {
             <span>LUNCH</span>
           </span>
           <span>BEERS</span>
+        </motion.div>
+        <motion.div style={{ opacity: opacity2Value }}>
+          <span className="text-4xl text-[#FFE17F]">COMING SOON</span>
         </motion.div>
       </div>
     </div>
