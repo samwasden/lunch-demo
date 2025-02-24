@@ -15,7 +15,7 @@ function App() {
     [0, window.innerWidth < 1000 ? 240 : 120]
   );
 
-  const sizeValue = useTransform(steinValue, [0, 0.5], [400, 300]);
+  const sizeValue = useTransform(steinValue, [0, 0.5], [360, 300]);
 
   const beerHeightValue = useTransform(scrollYProgress, [0.8, 0.9], [0, 52]);
   const foamHeightValue = useTransform(scrollYProgress, [0.8, 0.9], [0, 10]);
