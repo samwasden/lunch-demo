@@ -1,8 +1,8 @@
 import { motion, type MotionValue, useTransform } from "motion/react";
 
 export const Logo = ({ progressValue }: { progressValue: MotionValue }) => {
-  const beerHeightValue = useTransform(progressValue, [0.8, 0.9], [0, 52]);
-  const foamHeightValue = useTransform(progressValue, [0.8, 0.9], [0, 10]);
+  const beerHeightValue = useTransform(progressValue, [0.8, 0.9], [0, 56]);
+  const foamHeightValue = useTransform(progressValue, [0.8, 0.9], [0, 16]);
 
   const opacityValue = useTransform(progressValue, [0.5, 0.9], [0, 1]);
   const heightValue = useTransform(
