@@ -52,7 +52,7 @@ function App() {
           <span>BEERS</span>
         </motion.div>
         <motion.div style={{ opacity: opacity2Value }}>
-          <span className="text-4xl text-[#FFE17F]">COMING SOON</span>
+          <p className="text-4xl text-[#FFCF30]">COMING SOON</p>
         </motion.div>
       </div>
     </div>
