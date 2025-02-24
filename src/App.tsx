@@ -15,12 +15,12 @@ function App() {
     [0, window.innerWidth < 1000 ? 250 : 120]
   );
 
-  const beerHeightValue = useTransform(scrollYProgress, [0.9, 1], [0, 52]);
-  const foamHeightValue = useTransform(scrollYProgress, [0.9, 1], [0, 10]);
+  const beerHeightValue = useTransform(scrollYProgress, [0.8, 0.9], [0, 52]);
+  const foamHeightValue = useTransform(scrollYProgress, [0.8, 0.9], [0, 10]);
 
   return (
     <div
-      className="h-[400dvh] w-full overflow-x-hidden bg-[#100F17]"
+      className="h-[400dvh] w-full overflow-x-hidden bg-[#100F17] overscroll-none"
       ref={target}
     >
       <div
@@ -31,7 +31,7 @@ function App() {
         <Stein progressValue={steinValue} />
         <motion.div
           style={{ height: heightValue, opacity: opacityValue }}
-          className={`text-9xl text-white overflow-hidden flex ${
+          className={`text-9xl text-white overflow-hidden flex mb-36 ${
             window.innerWidth < 1000 ? "flex-col gap-0" : "gap-8"
           }`}
         >
