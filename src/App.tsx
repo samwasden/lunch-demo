@@ -24,7 +24,7 @@ function App() {
       ref={target}
     >
       <div
-        className={`w-full h-screen fixed flex items-center justify-center flex-col ${
+        className={`w-full h-[100dvh] fixed flex items-center justify-center flex-col ${
           window.innerWidth < 1000 ? "scale-60" : ""
         }`}
       >
