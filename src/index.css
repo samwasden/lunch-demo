@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@font-face {
+  font-family: "rubik";
+  src: url("./assets/RubikOne-Regular.ttf");
+}
+
+* {
+  font-family: "rubik";
+}
