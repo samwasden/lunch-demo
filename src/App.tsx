@@ -12,8 +12,10 @@ function App() {
   const heightValue = useTransform(
     scrollYProgress,
     [0, 0.3],
-    [0, window.innerWidth < 1000 ? 300 : 120]
+    [0, window.innerWidth < 1000 ? 240 : 120]
   );
+
+  const sizeValue = useTransform(steinValue, [0, 0.5], [400, 300]);
 
   const beerHeightValue = useTransform(scrollYProgress, [0.8, 0.9], [0, 52]);
   const foamHeightValue = useTransform(scrollYProgress, [0.8, 0.9], [0, 10]);
@@ -26,16 +28,18 @@ function App() {
       ref={target}
     >
       <div
-        className={`w-full fixed flex items-center justify-center flex-col h-fit min-h-[100dvh] ${
-          window.innerWidth < 1000 ? "scale-60" : ""
-        }`}
+        className={`w-full fixed flex items-center justify-center flex-col h-fit min-h-[100dvh]`}
       >
-        <Stein progressValue={steinValue} />
+        <Stein
+          progressValue={steinValue}
+          height={sizeValue}
+          width={sizeValue}
+        />
         <motion.div
           style={{ height: heightValue, opacity: opacityValue }}
           className={`text-9xl text-white overflow-hidden flex ${
             window.innerWidth < 1000
-              ? "flex-col gap-0 leading-[150px]"
+              ? "scale-60 flex-col gap-0 leading-[120px]"
               : "gap-8 leading-[120px]"
           }`}
         >

@@ -2,21 +2,24 @@ import {
   easeInOut,
   easeOut,
   motion,
+  SVGMotionProps,
   useTransform,
   type MotionValue,
 } from "motion/react";
 
-export const Stein = ({ progressValue }: { progressValue: MotionValue }) => {
+export const Stein = ({
+  progressValue,
+  ...props
+}: SVGMotionProps<SVGSVGElement> & { progressValue: MotionValue }) => {
   const rotationValue = useTransform(progressValue, [0.3, 0.8], [-30, 0], {
     ease: easeInOut,
   });
   return (
-    <svg
-      width="500"
-      height="500"
+    <motion.svg
       viewBox="0 0 500 500"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <Mask progressValue={progressValue} rotationValue={rotationValue} />
       <g mask="url(#mask0_3_4)">
@@ -31,7 +34,7 @@ export const Stein = ({ progressValue }: { progressValue: MotionValue }) => {
         stroke-linecap="round"
         style={{ rotateZ: rotationValue }}
       />
-    </svg>
+    </motion.svg>
   );
 };
 
