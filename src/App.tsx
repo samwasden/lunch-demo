@@ -19,8 +19,15 @@ function App() {
   const foamHeightValue = useTransform(scrollYProgress, [0.9, 1], [0, 10]);
 
   return (
-    <div className="h-[400vh] w-full overflow-x-hidden" ref={target}>
-      <div className="w-full h-screen fixed flex items-center justify-center flex-col bg-[#100F17]">
+    <div
+      className="h-[400dvh] w-full overflow-x-hidden bg-[#100F17]"
+      ref={target}
+    >
+      <div
+        className={`w-full h-screen fixed flex items-center justify-center flex-col ${
+          window.innerWidth < 1000 ? "scale-60" : ""
+        }`}
+      >
         <Stein progressValue={steinValue} />
         <motion.div
           style={{ height: heightValue, opacity: opacityValue }}
