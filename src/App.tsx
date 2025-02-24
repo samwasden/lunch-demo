@@ -26,7 +26,7 @@ function App() {
       ref={target}
     >
       <div
-        className={`w-full h-[100dvh] fixed flex items-center justify-center flex-col ${
+        className={`w-full fixed flex items-center justify-center flex-col h-fit min-h-[100dvh] ${
           window.innerWidth < 1000 ? "scale-60" : ""
         }`}
       >
@@ -34,7 +34,9 @@ function App() {
         <motion.div
           style={{ height: heightValue, opacity: opacityValue }}
           className={`text-9xl text-white overflow-hidden flex ${
-            window.innerWidth < 1000 ? "flex-col gap-0" : "gap-8"
+            window.innerWidth < 1000
+              ? "flex-col gap-0 leading-[150px]"
+              : "gap-8 leading-[120px]"
           }`}
         >
           <span className="relative">
